@@ -22,6 +22,9 @@ public class NumeroLcd implements Function<Dato, String[]> {
   // como la pelicula XD
   private char[][] getMatrix(int tam, int cifra) {
     final char[][] matrix = new char[2 * tam + 3][tam + 2];
+    for (char[] vector : matrix) {
+      Arrays.fill(vector, ' ');
+    }
     DigitoLcd dig = DIGITO_LCDS[cifra];
     // ciclo desde 0 hasta antes del tamaño
     for (int i = 1; i <= tam; i++) {
@@ -57,7 +60,7 @@ public class NumeroLcd implements Function<Dato, String[]> {
 
     boolean sup, med, inf, izqsup, izqinf, dersup, derinf;
 
-    public DigitoLcd(boolean sup, boolean med, boolean inf, boolean izqsup, boolean izqinf,
+    DigitoLcd(boolean sup, boolean med, boolean inf, boolean izqsup, boolean izqinf,
         boolean dersup, boolean derinf) {
       this.sup = sup;
       this.med = med;

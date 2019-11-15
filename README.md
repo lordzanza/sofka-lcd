@@ -2,4 +2,9 @@
 
 Ejercicio para transformar entradas numericas en impresiones tipo LCD con tamaños especificados
 
-_by David Vargas_
+### Ejecución
+Utilize el comando...
+
+`> java -jar DefinirLCD.jar`
+---
+_por David Vargas_

@@ -19,12 +19,13 @@ public class Programa {
   // flujo de impresion
   private PrintStream salida;
 
-  public Programa(InputStream ingreso, Function<Dato, String[]> conversor, PrintStream salida) {
+  private Programa(InputStream ingreso, Function<Dato, String[]> conversor, PrintStream salida) {
     this.ingreso = ingreso;
     this.conversor = conversor;
     this.salida = salida;
   }
 
+  // El metodo principal de la ejecución, no hace parte de la instancia al ser estatico
   public static void main(String[] args) throws Exception {
     Programa proceso = new Programa(System.in, new NumeroLcd(), System.out);
     // 1. imprimir opciones y leer datos
@@ -45,6 +46,7 @@ public class Programa {
     while (!linea.equals("0,0")) {
       linea = lector.nextLine();
       if (!linea.equals("0,0")) {
+        // separo por coma el registro y lo creo como una estructura de Dato
         String[] separados = linea.split(",");
         datos.add(new Dato(separados));
       }
